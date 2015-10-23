@@ -153,6 +153,14 @@ Next up add a `circle.yml` to the base of the repo and push this to github
 Then [add the project](https://circleci.com/add-projects) to circleci and you should see a passing test :)
 
 
+## Extras
+I've also added a few scripts (just shorthands really) to the [./scripts](./scripts) directory
+
+ * [shell](./scripts/shell) - to run in development
+ * [open](./scripts/open) - to open in a browser
+ * [run](./scripts/run) - to run in a production like way
+
+
 
 ## References
 
