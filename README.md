@@ -47,16 +47,18 @@ Create a `package.json`
       console.log('Example app listening at http:/localhost:%s', port);
     });
 
-...an app.json, here we'll include the _postgresql_ addon
+...an app.json describing your app
 
     {
       "name": "nodejs-heroku-docker",
       "description": "A simple docker heroku example for nodejs",
       "image": "heroku/nodejs",
-      "addons": [
-        "heroku-postgresql"
-      ]
+      "addons": []
     }
+
+...and a `Procfile` to start our app with[^](https://ddollar.github.io/foreman)
+
+    web: npm install; node app.js
 
 Now lets get the heroku toolbelt to generate us some heroku config
 
@@ -156,6 +158,7 @@ Then [add the project](https://circleci.com/add-projects) to circleci and you sh
 
  * <https://circleci.com/docs/continuous-deployment-with-heroku>
  * <https://devcenter.heroku.com/articles/docker>
+ * <https://ddollar.github.io/foreman/>
 
 
 ## License
