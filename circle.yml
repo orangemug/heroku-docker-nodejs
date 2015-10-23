@@ -3,6 +3,8 @@ machine:
     - docker
 
 dependencies:
+  pre:
+    - pip install docker-compose
   override:
     - docker-compose build
 
