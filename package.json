@@ -1,5 +1,9 @@
 {
   "dependencies": {
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "mocha": "^2.3.3"
+  },
+  "scripts": {
+    "test": "mocha test/index.js"
   }
 }
