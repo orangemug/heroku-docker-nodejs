@@ -63,7 +63,7 @@ Then run
 Note if the `Dockerfile` has changed then you'll have to rerun the above, to rebuild the image
 
 
-## Dev mode
+## Development
 This will open the app in a shell on the docker VM
 
     $ docker-compose run --service-ports web bash
@@ -71,7 +71,7 @@ This will open the app in a shell on the docker VM
     $ npm start
 
 
-## Prod mode
+## Production
 To run in prod mode
 
     $ docker-compose up
