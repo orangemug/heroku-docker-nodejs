@@ -39,7 +39,7 @@ Create a `package.json`
     var app = express();
 
     app.get('/', function (req, res) {
-      res.send("hello world!");
+      res.send("Hello from container land!");
     });
 
     var server = app.listen(process.env.PORT, function () {
