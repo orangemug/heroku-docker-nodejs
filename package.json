@@ -1,4 +1,7 @@
 {
+  "name": "heroku-docker-nodejs",
+  "private": true,
+  "version": "0.0.0",
   "dependencies": {
     "express": "^4.13.3",
     "mocha": "^2.3.3"
