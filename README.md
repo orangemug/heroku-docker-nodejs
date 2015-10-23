@@ -66,7 +66,7 @@ Now lets get the heroku toolbelt to generate us some heroku config
     Wrote Dockerfile
     Wrote docker-compose.yml
 
-This will have created 2 files now go and add some additional bits to your `docker-compose.yml`, this will allow you to share files between the host and the container during dev.
+This will have created 2 files. Now go and add some additional bits to your `docker-compose.yml`, this will allow you to share files between the host and the container during dev.
 
     web: 
       volumes:
@@ -77,7 +77,7 @@ Then run
 
     $ docker-compose build
 
-Note if the `Dockerfile` has changed then you'll have to rerun the above, to rebuild the container
+Note if the `Dockerfile` has changed then you'll have to rerun the above command, to rebuild the container
 
 
 ## Development
@@ -90,7 +90,7 @@ The important part above is `docker-compose run web` which will run a command in
     root@52697b69237b:/code# npm install
     root@52697b69237b:/code# npm start
 
-Open another terminal and run the following to hit the web server in a browser
+Open another terminal and run the following to hit the web server from a browser
 
     $ open "http://$(docker-machine ip default):8080"
 
@@ -172,7 +172,9 @@ Lets add the postgres addon, first off add the following to your `docker-compose
     herokuPostgresql:
       image: postgres
 
-`herokuPostgresql` defines a new service with is our postgres database, this is linked in the web/shell services. When you setup a link the service will be added to `/etc/hosts`, so the host `herokuPostgresql` will be our postgres server.
+`herokuPostgresql` defines a new service which uses the [postgres image from dockerhub](https://hub.docker.com/_/postgres/), this is linked from the web/shell services. When you setup a link the service will be added to `/etc/hosts`
+
+So the host `herokuPostgresql` will be our postgres server running in the other container, cool huh!
 
 Now we'll add `psql` so we can connect to postgres from within our container. To do this append the following to the `Dockerfile`
 
@@ -182,7 +184,7 @@ Now rebuild the image
 
     docker-compose build
 
-Now we can start a shell and test that we can connect to the postgres
+We can now start a shell and test that we can connect to postgres
 
     $ docker-compose run --service-ports web bash
     $ psql $DATABASE_URL
@@ -195,6 +197,7 @@ I've also added a few scripts (just shorthands really) to the [./scripts](./scri
 
  * [shell](./scripts/shell) - to run in development
  * [open](./scripts/open) - to open in a browser
+ * [rebuild](./scripts/rebuild) - rebuild the container
  * [run](./scripts/run) - to run in a production like way
 
 
