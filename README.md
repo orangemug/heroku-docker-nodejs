@@ -153,13 +153,49 @@ Next up add a `circle.yml` to the base of the repo and push this to github
 Then [add the project](https://circleci.com/add-projects) to circleci and you should see a passing test :)
 
 
+## Addons
+We can also include postgresql addons in our development setup, which will allow us to run tests in the same manor in development as we do in CI/production.
+
+Lets add the postgres addon, first off add the following to your `docker-compose.yml`
+
+    web:
+      environment:
+        DATABASE_URL: 'postgres://postgres:@herokuPostgresql:5432/postgres'
+      links:
+        - herokuPostgresql
+    shell:
+      environment:
+        DATABASE_URL: 'postgres://postgres:@herokuPostgresql:5432/postgres'
+      links:
+        - herokuPostgresql
+    # This defines a new service called herokuPostgresql
+    herokuPostgresql:
+      image: postgres
+
+`herokuPostgresql` defines a new service with is our postgres database, this is linked in the web/shell services. When you setup a link the service will be added to `/etc/hosts`, so the host `herokuPostgresql` will be our postgres server.
+
+Now we'll add `psql` so we can connect to postgres from within our container. To do this append the following to the `Dockerfile`
+
+    RUN apt-get update && apt-get install -y postgresql-client-9.3
+
+Now rebuild the image
+
+    docker-compose build
+
+Now we can start a shell and test that we can connect to the postgres
+
+    $ docker-compose run --service-ports web bash
+    $ psql $DATABASE_URL
+
+You should now be connected to the postgres server
+
+
 ## Extras
 I've also added a few scripts (just shorthands really) to the [./scripts](./scripts) directory
 
  * [shell](./scripts/shell) - to run in development
  * [open](./scripts/open) - to open in a browser
  * [run](./scripts/run) - to run in a production like way
-
 
 
 ## References
