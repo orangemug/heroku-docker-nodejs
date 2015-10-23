@@ -1,0 +1,10 @@
+{
+  "name": "Example Name",
+  "description": "An example app.json for heroku-docker",
+  "image": "heroku/nodejs",
+  "website": "http://teamguide.io",
+  "addons": [
+    "heroku-postgresql",
+    "heroku-redis"
+  ]
+}
