@@ -1,6 +1,10 @@
 # docker-heroku-example
 A simple docker heroku example with CI
 
+[![circleci](https://circleci.com/gh/teamguideio/docker-heroku-example.png?style=shield)](https://circleci.com/gh/teamguideio/docker-heroku-example)
+[![Dependency Status](https://david-dm.org/teamguideio/docker-heroku-example.svg)](https://david-dm.org/teamguideio/docker-heroku-example)
+[![Dev Dependency Status](https://david-dm.org/teamguideio/docker-heroku-example/dev-status.svg)](https://david-dm.org/teamguideio/docker-heroku-example#info=devDependencies)
+
 
 ## Prerequisites
 Install some deps
