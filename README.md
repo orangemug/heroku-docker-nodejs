@@ -47,7 +47,7 @@ Create a `package.json`
       console.log('Example app listening at http:/localhost:%s', port);
     });
 
-...an app.json, here we'll include the postgresql addon
+...an app.json, here we'll include the _postgresql_ addon
 
     {
       "name": "nodejs-heroku-docker",
