@@ -110,7 +110,7 @@ And open it in your browser
 
 
 ## Testing
-Next up lets setup some CI with [circleci](http://circleci.com), first off [create an account](http://circleci.com) if you haven't already got one.
+Next up lets setup some CI with [circleci](http://circleci.com), first off [create an account](https://circleci.com/signup) if you haven't already got one.
 
 Create a simple test (ok it doesn't actually test anything but you'll get the idea)
 
