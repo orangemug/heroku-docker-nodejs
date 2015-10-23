@@ -161,5 +161,9 @@ Then [add the project](https://circleci.com/add-projects) to circleci and you sh
  * <https://ddollar.github.io/foreman/>
 
 
+## Thanks!
+To [samgiles](https://github.com/samgiles) and [oliverbrooks](https://github.com/oliverbrooks) for the pointers
+
+
 ## License
 [MIT](LICENSE)
