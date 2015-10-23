@@ -25,7 +25,7 @@ We'll also assume you'll have this code in a repo on [github](http://github.com)
 Create a `package.json`
 
     {
-      "name": "nodejs-heroku-docker",
+      "name": "heroku-docker-nodejs",
       "private": true,
       "version": "0.0.0",
       "dependencies": {
