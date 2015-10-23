@@ -4,7 +4,6 @@
   "image": "heroku/nodejs",
   "website": "http://teamguide.io",
   "addons": [
-    "heroku-postgresql",
-    "heroku-redis"
+    "heroku-postgresql"
   ]
 }
