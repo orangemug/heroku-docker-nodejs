@@ -82,7 +82,7 @@ To run in prod mode
 Takes the `app.json` and prepends the `env` name infront of the host.
 
  * Get nodejs app working on heroku-docker
- * Get that app working on CI using docker
+ * [ok] Get that app working on CI using docker
  * Get that app deployed to heroku
    * <https://blog.heroku.com/archives/2014/5/22/introducing_the_app_json_application_manifest>
 
