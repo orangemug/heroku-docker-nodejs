@@ -1,4 +1,4 @@
-# nodejs-heroku-docker
+# heroku-docker-nodejs
 A simple docker heroku example for [nodejs](https://nodejs.org) with development, CI and deployment instructions
 
 This README acts as a tutorial and the repo itself contains the files the tutorial results in
