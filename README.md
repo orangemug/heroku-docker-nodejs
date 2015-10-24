@@ -85,7 +85,7 @@ When running the app in development the main requirement is quick restarts of yo
 
     $ docker-compose run --service-ports web bash
 
-The important part above is `docker-compose run web` which will run a command in our docker container. `--service-ports` tells _docker-compose_ that we want to setup the port mappings. You should now be seeing a bash terminal prompt where you can start your app.
+The important part above is `docker-compose run web` which will run a command in our docker container. `--service-ports` tells _docker-compose_ that we want to setup the port mappings. You should now be seeing a bash prompt where you can start your app.
 
     root@52697b69237b:/code# npm install
     root@52697b69237b:/code# npm start
