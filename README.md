@@ -1,7 +1,7 @@
 # heroku-docker-nodejs
 A simple heroku-docker example for [nodejs](https://nodejs.org) with development, CI and deployment instructions
 
-This README acts as a tutorial and the repo itself contains the files the tutorial results in
+This README acts as a tutorial and the repo itself contains the final result
 
 [![circleci](https://circleci.com/gh/teamguideio/docker-heroku-example.png?style=shield)](https://circleci.com/gh/teamguideio/docker-heroku-example)
 [![Dependency Status](https://david-dm.org/teamguideio/docker-heroku-example.svg)](https://david-dm.org/teamguideio/docker-heroku-example)
@@ -66,7 +66,7 @@ Now lets get the heroku toolbelt to generate us some heroku config
     Wrote Dockerfile
     Wrote docker-compose.yml
 
-This will have created 2 files. Now go and add some additional bits to your `docker-compose.yml`, this will allow you to share files between the host and the container during dev.
+This will have created 2 files which __docker-compose__ uses to create and run your containers. Now go and add some additional bits to your `docker-compose.yml`, this will allow you to share files between the host and the container during dev.
 
     web: 
       volumes:
@@ -81,11 +81,11 @@ Note if the `Dockerfile` has changed then you'll have to rerun the above command
 
 
 ## Development
-When running the app in development the main aim for a quick turn around, so instead of reloading the VM each time we'll start a bash shell in the container and run the app manually.
+When running the app in development the main requirement is quick restarts of your app. So instead of reloading the VM each time, we'll start a bash shell in the container and run the app manually.
 
     $ docker-compose run --service-ports web bash
 
-The important part above is `docker-compose run web` which will run a command in our docker container. `--service-ports` tells docker that we want to setup the port mappings. You should now be seeing a bash terminal prompt where you can start your app.
+The important part above is `docker-compose run web` which will run a command in our docker container. `--service-ports` tells __docker-compose__ that we want to setup the port mappings. You should now be seeing a bash terminal prompt where you can start your app.
 
     root@52697b69237b:/code# npm install
     root@52697b69237b:/code# npm start
@@ -100,11 +100,11 @@ To deploy the VM to production first off create an app on heroku
 
     heroku create [optional name]
 
-Release the app
+Now instead of running `git push heroku` as you'd normally do with heroku, we instead run
 
     heroku docker:release
 
-And open it in your browser
+As normal you can now open it in your browser
 
     heroku open
 
@@ -123,7 +123,7 @@ Create a simple test (ok it doesn't actually test anything but you'll get the id
       });
     });
 
-Add the test script and `mocha` dep to your `package.json`
+Add the test script and `mocha` dependency to your `package.json`
 
     {
       "dependencies": {
@@ -134,7 +134,7 @@ Add the test script and `mocha` dep to your `package.json`
       }
     }
 
-Next up add a `circle.yml` to the base of the repo and push this to github
+Next up add a `circle.yml` to the base of the repo and __push this to github__
 
     machine:
       services:
@@ -150,11 +150,11 @@ Next up add a `circle.yml` to the base of the repo and push this to github
       override:
         - docker-compose run --service-ports web npm test
 
-Then [add the project](https://circleci.com/add-projects) to circleci and you should see a passing test :)
+Then [add the project](https://circleci.com/add-projects) in circleci and you should very shortly see passing test :)
 
 
-## Addons
-We can also include postgresql addons in our development setup, which will allow us to run tests in the same manor in development as we do in CI/production.
+## Add ons
+We can also include postgresql addons in our development setup, which will allow us to run tests in the same environment in development, CI and production.
 
 Lets add the postgres addon, first off add the following to your `docker-compose.yml`
 
@@ -184,12 +184,14 @@ Now rebuild the image
 
     docker-compose build
 
-We can now start a shell and test that we can connect to postgres
+We can now start a shell and test that we can connect to postgres.
 
     $ docker-compose run --service-ports web bash
     $ psql $DATABASE_URL
 
-You should now be connected to the postgres server
+Note: The `DATABASE_URL` was defined in the `docker-compose-yml` above.
+
+You should now be connected to the postgres server! If you want to know more about the postgres container see <https://hub.docker.com/_/postgres/>
 
 
 ## Extras
@@ -206,6 +208,7 @@ I've also added a few scripts (just shorthands really) to the [./scripts](./scri
  * <https://circleci.com/docs/continuous-deployment-with-heroku>
  * <https://devcenter.heroku.com/articles/docker>
  * <https://ddollar.github.io/foreman>
+ * <https://hub.docker.com/_/postgres>
 
 
 ## Thanks!
