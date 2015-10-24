@@ -154,9 +154,7 @@ Then [add the project](https://circleci.com/add-projects) in circleci and you sh
 
 
 ## Add ons
-We can also include postgresql addons in our development setup, which will allow us to run tests in the same environment in development, CI and production.
-
-Lets add the postgres addon, first off add the following to your `docker-compose.yml`
+We'll add postgres as an example here as it's probably the most common addon for heroku. First off add the following to your `docker-compose.yml`
 
     web:
       environment:
@@ -174,9 +172,9 @@ Lets add the postgres addon, first off add the following to your `docker-compose
 
 `herokuPostgresql` defines a new service which uses the [postgres image from dockerhub](https://hub.docker.com/_/postgres/), this is linked from the web/shell services. When you setup a link the service will be added to `/etc/hosts`
 
-So the host `herokuPostgresql` will be our postgres server running in the other container, cool huh!
+So the host `herokuPostgresql` will point to our postgres server running in another container, cool huh!
 
-Now we'll add `psql` so we can connect to postgres from within our container. To do this append the following to the `Dockerfile`
+Now we'll add `psql` so we can connect to postgres from within our `web` service. To do this append the following to the `Dockerfile`
 
     RUN apt-get update && apt-get install -y postgresql-client-9.3
 
@@ -191,7 +189,7 @@ We can now start a shell and test that we can connect to postgres.
 
 Note: The `DATABASE_URL` was defined in the `docker-compose-yml` above.
 
-You should now be connected to the postgres server! If you want to know more about the postgres container see <https://hub.docker.com/_/postgres/>
+You should now be connected to the postgres server! If you want to know more about the postgres docker image see <https://hub.docker.com/_/postgres/>
 
 
 ## Extras
