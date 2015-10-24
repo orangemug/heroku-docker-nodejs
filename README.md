@@ -1,7 +1,7 @@
 # heroku-docker-nodejs
 A simple heroku-docker example for [nodejs](https://nodejs.org) with development, CI and deployment instructions
 
-This README acts as a tutorial and the repo itself contains the final result
+This README acts as a quick start guide to setting up and using heroku-docker, the repo itself contains the final result.
 
 [![circleci](https://circleci.com/gh/teamguideio/docker-heroku-example.png?style=shield)](https://circleci.com/gh/teamguideio/docker-heroku-example)
 [![Dependency Status](https://david-dm.org/teamguideio/docker-heroku-example.svg)](https://david-dm.org/teamguideio/docker-heroku-example)
