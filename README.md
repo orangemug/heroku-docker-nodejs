@@ -66,7 +66,7 @@ Now lets get the heroku toolbelt to generate us some heroku config
     Wrote Dockerfile
     Wrote docker-compose.yml
 
-This will have created 2 files which __docker-compose__ uses to create and run your containers. Now go and add some additional bits to your `docker-compose.yml`, this will allow you to share files between the host and the container during dev.
+This will have created 2 files which _docker-compose_ uses to create and run your containers. Now go and add some additional bits to your `docker-compose.yml`, this will allow you to share files between the host and the container during dev.
 
     web: 
       volumes:
@@ -85,7 +85,7 @@ When running the app in development the main requirement is quick restarts of yo
 
     $ docker-compose run --service-ports web bash
 
-The important part above is `docker-compose run web` which will run a command in our docker container. `--service-ports` tells __docker-compose__ that we want to setup the port mappings. You should now be seeing a bash terminal prompt where you can start your app.
+The important part above is `docker-compose run web` which will run a command in our docker container. `--service-ports` tells _docker-compose_ that we want to setup the port mappings. You should now be seeing a bash terminal prompt where you can start your app.
 
     root@52697b69237b:/code# npm install
     root@52697b69237b:/code# npm start
@@ -134,7 +134,7 @@ Add the test script and `mocha` dependency to your `package.json`
       }
     }
 
-Next up add a `circle.yml` to the base of the repo and __push this to github__
+Next up add a `circle.yml` to the base of the repo and _push this to github_
 
     machine:
       services:
