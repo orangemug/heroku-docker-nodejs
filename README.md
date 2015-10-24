@@ -104,7 +104,7 @@ Now instead of running `git push heroku` as you'd normally do with heroku, we in
 
     heroku docker:release
 
-As normal you can now open it in your browser
+As normal you can now open the app in your browser
 
     heroku open
 
