@@ -117,7 +117,7 @@ Create a simple test (ok it doesn't actually test anything but you'll get the id
     //  ./test/index.js 
     var assert = require("assert");
 
-    describe("docker-heroku-example", function() {
+    describe("heroku-docker-nodejs", function() {
       it("should pass test :)", function() {
         assert(true);
       });
