@@ -1,5 +1,5 @@
 # heroku-docker-nodejs
-A simple docker heroku example for [nodejs](https://nodejs.org) with development, CI and deployment instructions
+A simple heroku-docker example for [nodejs](https://nodejs.org) with development, CI and deployment instructions
 
 This README acts as a tutorial and the repo itself contains the files the tutorial results in
 
@@ -205,7 +205,7 @@ I've also added a few scripts (just shorthands really) to the [./scripts](./scri
 
  * <https://circleci.com/docs/continuous-deployment-with-heroku>
  * <https://devcenter.heroku.com/articles/docker>
- * <https://ddollar.github.io/foreman/>
+ * <https://ddollar.github.io/foreman>
 
 
 ## Thanks!
