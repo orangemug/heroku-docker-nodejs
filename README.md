@@ -3,9 +3,9 @@ A simple heroku-docker example for [nodejs](https://nodejs.org) with development
 
 This README acts as a quick start guide to setting up and using heroku-docker, the repo itself contains the final result.
 
-[![circleci](https://circleci.com/gh/teamguideio/heroku-docker-nodejs.png?style=shield)](https://circleci.com/gh/teamguideio/heroku-docker-nodejs)
-[![Dependency Status](https://david-dm.org/teamguideio/heroku-docker-nodejs.svg)](https://david-dm.org/teamguideio/heroku-docker-nodejs)
-[![Dev Dependency Status](https://david-dm.org/teamguideio/heroku-docker-nodejs/dev-status.svg)](https://david-dm.org/teamguideio/heroku-docker-nodejs#info=devDependencies)
+[![circleci](https://circleci.com/gh/orangemug/heroku-docker-nodejs.png?style=shield)](https://circleci.com/gh/orangemug/heroku-docker-nodejs)
+[![Dependency Status](https://david-dm.org/orangemug/heroku-docker-nodejs.svg)](https://david-dm.org/orangemug/heroku-docker-nodejs)
+[![Dev Dependency Status](https://david-dm.org/orangemug/heroku-docker-nodejs/dev-status.svg)](https://david-dm.org/orangemug/heroku-docker-nodejs#info=devDependencies)
 
 
 ## Prerequisites
